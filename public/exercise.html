@@ -27,17 +27,39 @@
             <label for="type">Exercise Type:</label>
             <select name="type" id="type">
               <option disabled selected>Select Exercise Type</option>
-              <option value="resistance">Resistance</option>
+              <option value="resistance">Weights</option>
               <option value="cardio">Cardio</option>
+              <option value="bodyweight">Bodyweight</option> 
+              <option value="handstand">Handstand</option>
+              <option value="stretching">Stretching</option> 
+
             </select>
           </div>
+
+        <!-- New Options Added -->
+
+
+          
+   
+
+
+
+
+
+
+
+
+
+
+
+
           <div class="cardio-form d-none">
             <div class="cardio-name">
               <label for="cardio-name">Name:</label>
-              <input type="text" name="cardio-name" id="cardio-name" placeholder="Running" />
+              <input type="text" name="cardio-name" id="cardio-name" placeholder="Skipping" />
             </div>
             <div class="distance">
-              <label for="distance">Distance (miles):</label>
+              <label for="distance">Distance (kilometers):</label>
               <input type="number" name="distance" id="distance" placeholder="5" />
             </div>
             <div class="duration">
@@ -45,13 +67,17 @@
               <input type="number" name="duration" id="duration" placeholder="10" />
             </div>
           </div>
+
+
+
+
           <div class="resistance-form d-none">
             <div class="exercise">
               <label for="name">Exercise Name:</label>
               <input type="text" name="name" id="name" placeholder="Bench Press" />
             </div>
             <div class="weight">
-              <label for="weight">Weight (lbs):</label>
+              <label for="weight">Weight (kgs):</label>
               <input type="number" name="weight" id="weight" placeholder="200" />
             </div>
             <div class="sets">
@@ -67,6 +93,69 @@
               <input type="number" name="resistance-duration" id="resistance-duration" placeholder="10" />
             </div>
           </div>
+
+          <div class="bodyweight-form d-none">
+            <div class="bodyweight-name">
+              <label for="bodyweight-name">Name:</label>
+              <input type="text" name="bodyweight-name" id="bodyweight-name" placeholder="Pull-Ups" />
+            </div>
+            <div class="sets">
+              <label for="sets">Sets:</label>
+              <input type="number" name="sets" id="sets" placeholder="4" />
+            </div>
+            <div class="reps">
+              <label for="reps">Reps:</label>
+              <input type="number" name="reps" id="reps" placeholder="10" />
+            </div>
+            <div class="resistance-duration">
+              <label for="resistance-duration">Duration (minutes):</label>
+              <input type="number" name="resistance-duration" id="resistance-duration" placeholder="10" />
+            </div>
+          </div>
+
+
+          <div class="handstand-form d-none">
+            <div class="handstand-name">
+              <label for="handstand-name">Name:</label>
+              <input type="text" name="handstand-name" id="handstand-name" placeholder="Chest to wall handstand" />
+            </div>
+            <div class="sets">
+              <label for="sets">Sets:</label>
+              <input type="number" name="sets" id="sets" placeholder="4" />
+            </div>
+            <div class="reps">
+              <label for="reps">Reps:</label>
+              <input type="number" name="reps" id="reps" placeholder="10" />
+            </div>
+            <div class="handstand-duration">
+              <label for="handstand-duration">Handstand hold duration (seconds):</label>
+              <input type="number" name="handstand-duration" id="handstand-duration" placeholder="60" />
+            </div>
+          </div>
+
+
+          
+          <div class="stretching-form d-none">
+            <div class="stretching-name">
+              <label for="stretching-name">Name:</label>
+              <input type="text" name="stretching-name" id="stretching-name" placeholder="Pancake stretch" />
+            </div>
+            <div class="sets">
+              <label for="sets">Sets:</label>
+              <input type="number" name="sets" id="sets" placeholder="4" />
+            </div>
+            <div class="reps">
+              <label for="reps">Reps:</label>
+              <input type="number" name="reps" id="reps" placeholder="10" />
+            </div>
+            <div class="stretching-duration">
+              <label for="stretching-duration">Stretch hold duration (seconds):</label>
+              <input type="number" name="stretching-duration" id="stretching-duration" placeholder="60" />
+            </div>
+          </div>
+
+
+
           <div class="buttons">
             <button disabled class="huge ui blue button complete">
               Complete

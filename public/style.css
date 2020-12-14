@@ -250,6 +250,9 @@ button {
 }
 .workout-type,
 form .cardio-form div,
+form .bodyweight-form div,
+form .handstand-form div,
+form .stretching-form div,
 form .resistance-form div {
   display: flex;
   margin-top: 30px;
@@ -425,6 +428,9 @@ form > button {
 
 .workout-type,
 .cardio-form,
+.bodyweight-form,
+.handstand-form,
+.stretching-form,
 .resistance-form {
   padding: 10px;
 }

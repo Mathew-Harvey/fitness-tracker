@@ -22,7 +22,7 @@ const workoutSchema = new Schema(
                 },
                 duration: {
                     type: Number,
-                    required: "Enter an exercise duration in minutes"
+                    required: "Enter an exercise duration in minutes or seconds"
                 },
                 weight: {
                     type: Number

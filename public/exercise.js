@@ -1,6 +1,9 @@
 const workoutTypeSelect = document.querySelector("#type");
 const cardioForm = document.querySelector(".cardio-form");
 const resistanceForm = document.querySelector(".resistance-form");
+const bodyweightForm = document.querySelector(".bodyweight-form");
+const handstandForm = document.querySelector(".handstand-form");
+const stretchingForm = document.querySelector(".stretching-form");
 const cardioNameInput = document.querySelector("#cardio-name");
 const nameInput = document.querySelector("#name");
 const weightInput = document.querySelector("#weight");
@@ -38,12 +41,39 @@ function handleWorkoutTypeChange(event) {
   if (workoutType === "cardio") {
     cardioForm.classList.remove("d-none");
     resistanceForm.classList.add("d-none");
+    bodyweightForm.classList.add("d-none");
+    handstandForm.classList.add("d-none");
+    stretchingForm.classList.add("d-none");
   } else if (workoutType === "resistance") {
     resistanceForm.classList.remove("d-none");
     cardioForm.classList.add("d-none");
-  } else {
+    bodyweightForm.classList.add("d-none");
+    handstandForm.classList.add("d-none");
+    stretchingForm.classList.add("d-none");
+  } else if (workoutType === "bodyweight") {
+    bodyweightForm.classList.remove("d-none");
     cardioForm.classList.add("d-none");
     resistanceForm.classList.add("d-none");
+    handstandForm.classList.add("d-none");
+    stretchingForm.classList.add("d-none");
+  } else if (workoutType === "handstand") {
+    handstandForm.classList.remove("d-none");
+    cardioForm.classList.add("d-none");
+    bodyweightForm.classList.add("d-none");
+    resistanceForm.classList.add("d-none");
+    stretchingForm.classList.add("d-none");
+  } else if (workoutType === "stretching") {
+    stretchingForm.classList.remove("d-none");
+    cardioForm.classList.add("d-none");
+    bodyweightForm.classList.add("d-none");
+    handstandForm.classList.add("d-none");
+    resistanceForm.classList.add("d-none");
+  }else {
+    cardioForm.classList.add("d-none");
+    resistanceForm.classList.add("d-none");
+    bodyweightForm.classList.add("d-none");
+    handstandForm.classList.add("d-none");
+    stretchingForm.classList.add("d-none");
   }
 
   validateInputs();
@@ -84,6 +114,54 @@ function validateInputs() {
     if (distanceInput.value.trim() === "") {
       isValid = false;
     }
+  } else if (workoutType === "bodyweight") {
+    if (nameInput.value.trim() === "") {
+      isValid = false;
+    }
+ 
+    if (setsInput.value.trim() === "") {
+      isValid = false;
+    }
+
+    if (repsInput.value.trim() === "") {
+      isValid = false;
+    }
+
+    if (resistanceDurationInput.value.trim() === "") {
+      isValid = false;
+    }
+  } else if (workoutType === "handstand") {
+    if (nameInput.value.trim() === "") {
+      isValid = false;
+    }
+
+    if (setsInput.value.trim() === "") {
+      isValid = false;
+    }
+
+    if (repsInput.value.trim() === "") {
+      isValid = false;
+    }
+
+    if (resistanceDurationInput.value.trim() === "") {
+      isValid = false;
+    }
+  } else if (workoutType === "stretching") {
+    if (nameInput.value.trim() === "") {
+      isValid = false;
+    }
+
+    if (setsInput.value.trim() === "") {
+      isValid = false;
+    }
+
+    if (repsInput.value.trim() === "") {
+      isValid = false;
+    }
+
+    if (resistanceDurationInput.value.trim() === "") {
+      isValid = false;
+    }
   }
 
   if (isValid) {
@@ -112,8 +190,25 @@ async function handleFormSubmit(event) {
     workoutData.sets = Number(setsInput.value.trim());
     workoutData.reps = Number(repsInput.value.trim());
     workoutData.duration = Number(resistanceDurationInput.value.trim());
-  }
-
+  } else if (workoutType === "bodyweight") {
+    workoutData.type = "bodyweight";
+    workoutData.name = nameInput.value.trim();
+    workoutData.sets = Number(setsInput.value.trim());
+    workoutData.reps = Number(repsInput.value.trim());
+    workoutData.duration = Number(resistanceDurationInput.value.trim());
+  } else if (workoutType === "handstand") {
+    workoutData.type = "handstand";
+    workoutData.name = nameInput.value.trim();
+    workoutData.sets = Number(setsInput.value.trim());
+    workoutData.reps = Number(repsInput.value.trim());
+    workoutData.duration = Number(resistanceDurationInput.value.trim());
+  } else if (workoutType === "stretching") {
+    workoutData.type = "stretching";
+    workoutData.name = nameInput.value.trim();
+    workoutData.sets = Number(setsInput.value.trim());
+    workoutData.reps = Number(repsInput.value.trim());
+    workoutData.duration = Number(resistanceDurationInput.value.trim());
+  }  
   await API.addExercise(workoutData);
   clearInputs();
   toast.classList.add("success");

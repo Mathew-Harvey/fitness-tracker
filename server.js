@@ -36,5 +36,5 @@ app.use(routes)
 
 //listen to port
 app.listen(PORT, () => {
-  console.log(`App running on port ${PORT}!`);
+  console.log(`App running on here - CLICK - http://www.localhost:${PORT}`);
 });
