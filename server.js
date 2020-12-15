@@ -21,12 +21,13 @@ app.use(express.static("public"));
 
 
 //access database
-mongoose
-  .connect(
+mongoose.connect(
     process.env.MONGODB_URI || "mongodb://localhost/Fitness-Tracker_db",
     {
       useNewUrlParser: true,
-      useUnifiedTopology: true
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+      useFindAndModify: false
     })
   .then(() => console.log(`successfully connected to database: ${databaseName}`));
 
